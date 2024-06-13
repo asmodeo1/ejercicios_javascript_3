@@ -21,3 +21,27 @@ const personas = [
         ]
     }
 ];
+
+function mostrarDatos() {
+    const contenedor = document.getElementById("contenedorPersonas");
+    for (const persona of personas) {
+        const divAlumno = document.createElement("div");
+        divAlumno.classList.add("border", "border-dark", "m-2", "text-start", "p-2");
+        divAlumno.textContent = persona.nombre;
+        contenedor.appendChild(divAlumno);
+
+        for (const nota of persona.notas) {
+            const divNotas = document.createElement("div");
+            divAlumno.appendChild(divNotas);
+            const spanNombreAsignatura = document.createElement("span");
+            spanNombreAsignatura.classList.add("pe-3")
+            divNotas.appendChild(spanNombreAsignatura);
+            spanNombreAsignatura.textContent = nota.asignatura;
+            const spanNotaAsignatura = document.createElement("span");
+            divNotas.appendChild(spanNotaAsignatura);
+            spanNotaAsignatura.textContent = nota.nota;
+        }
+    }
+}
+
+document.getElementById("mostrar").addEventListener("click", mostrarDatos);

@@ -25,3 +25,18 @@ const recetas = [
         "precio": 6.50
     }
 ];
+
+function mostrarRecetas() {
+    const contenedor = document.getElementById("contenedorRecetas");
+    contenedor.textContent = ""; // Borramos lo que hubiese
+    for (const receta of recetas) {
+        const p = document.createElement("p");
+        p.textContent = receta.nombre_receta;
+        contenedor.appendChild(p);
+        // Las tres anteriores en una sola
+       // contenedor.innerHTML += "<p>" + receta.nombre_receta + "</p>";
+        //contenedor.innerHTML += `<p>${receta.nombre_receta}</p>`;
+    }
+}
+
+document.getElementById("mostrar").addEventListener("click", mostrarRecetas);

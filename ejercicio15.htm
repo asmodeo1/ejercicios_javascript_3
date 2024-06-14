@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Este no viene en el enunciado y va todo por consola. Es para practicar array
+    dentro de arrays
+
+    <script>
+      const ciudades = [
+        { nombre: "vigo", parroquias: ["bouzas", "cabral", "teis"] },
+        { nombre: "redondela", parroquias: ["chapela", "cesantes"] },
+      ];
+
+      for (const ciudad of ciudades) {
+        console.log(ciudad.nombre);
+        for (const parroquia of ciudad.parroquias) {
+          console.log(parroquia);
+        }
+      }
+
+      const ciudades2 = [
+        {
+          nombre: "vigo",
+          parroquias: [
+            { nombre: "bouzas", habitantes: 4500 },
+            { nombre: "cabral", habitantes: 3000 },
+            { nombre: "teis", habitantes: 6000 },
+          ],
+        },
+        {
+          nombre: "redondela",
+          parroquias: [
+            { nombre: "chapela", habitantes: 4500 },
+            { nombre: "cesantes", habitantes: 3000 },
+          ],
+        },
+      ];
+
+      for (const ciudad of ciudades2) {
+        console.log(ciudad.nombre);
+        for (const parroquia of ciudad.parroquias) {
+          console.log(parroquia.nombre, parroquia.habitantes);
+        }
+      }
+
+      const ciudades3 = [
+        {
+          nombre: "vigo",
+          parroquias: [
+            {
+              nombre: "bouzas",
+              habitantes: [
+                { año: 2000, numero: 4500 },
+                { año: 2001, numero: 4510 },
+              ],
+            },
+            {
+              nombre: "cabral",
+              habitantes: [
+                { año: 2000, numero: 4500 },
+                { año: 2001, numero: 4510 },
+              ],
+            },
+            {
+              nombre: "teis",
+              habitantes: [
+                { año: 2000, numero: 4500 },
+                { año: 2001, numero: 4510 },
+              ],
+            },
+          ],
+        },
+        {
+          nombre: "redondela",
+          parroquias: [
+            {
+              nombre: "chapela",
+              habitantes: [
+                { año: 2000, numero: 4500 },
+                { año: 2001, numero: 4510 },
+              ],
+            },
+            {
+              nombre: "cesantes",
+              habitantes: [
+                { año: 2000, numero: 4500 },
+                { año: 2001, numero: 4510 },
+              ],
+            },
+          ],
+        },
+      ];
+
+      for (const ciudad of ciudades3) {
+        console.log(ciudad.nombre);
+        for (const parroquia of ciudad.parroquias) {
+          console.log(parroquia.nombre);
+          for (const datos of parroquia.habitantes) {
+            console.log(datos.año, datos.numero);
+          }
+        }
+      }
+
+      const ciudades4 = { pontevedra: ["vigo", "redondela", "cangas"] };
+      for (const ciudad of ciudades4.pontevedra) {
+        console.log(ciudad);
+      }
+
+    console.log("----------------------")
+      const ciudades5 = {
+        pontevedra: ["vigo", "redondela", "cangas"],
+        lugo: ["lugo"],
+      };
+      for (const elemento in ciudades5) {
+        console.log(elemento);
+        for(const ciudad of ciudades5[elemento]) {
+            console.log(ciudad);
+        }
+      }
+      
+    </script>
+  </body>
+</html>
